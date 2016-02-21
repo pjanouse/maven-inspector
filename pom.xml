@@ -21,15 +21,19 @@
             </goals>
             <configuration>
               <source>
-                println 'Properties:'
+                println "Properties:"
                 System.properties.each { k, v ->
                     println "  $k:$v"
                 }
-                println ''
 
-                println 'Env vars:'
+                println "\nEnv vars:"
                 System.getenv().each { k, v ->
                     println "  $k:$v"
+                }
+
+                println "\nJVM arguments:"
+                java.lang.management.ManagementFactory.runtimeMXBean.inputArguments.each { v ->
+                    println " $v"
                 }
               </source>
             </configuration>
