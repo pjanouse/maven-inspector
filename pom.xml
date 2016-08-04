@@ -45,12 +45,12 @@ THE SOFTWARE.
             <configuration>
               <source>
                 println "Properties:"
-                System.properties.each { k, v ->
+                System.properties.sort().each { k, v ->
                     println "  $k:$v"
                 }
 
                 println "\nEnv vars:"
-                System.getenv().each { k, v ->
+                System.getenv().sort().each { k, v ->
                     println "  $k:$v"
                 }
 
